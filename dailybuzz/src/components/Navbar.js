@@ -33,7 +33,6 @@ const NavBar = (props) => {
                             size={30}
                         />
                     </div>
-                    
                 </div>
             </nav>
         </div>

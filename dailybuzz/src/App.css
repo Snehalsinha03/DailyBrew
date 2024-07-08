@@ -5,10 +5,10 @@ body.light-mode {
   background-color: white;
   color: black;
   transition: background-color 0.3s, color 0.3s;
-}
+} 
 
 body.dark-mode {
-  background-color: #130318;
+  background-color: rgb(54, 52, 52);
   color: white;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -49,15 +49,20 @@ body.dark-mode {
 }
 
 /* Headline text styles */
-.head-text-dark {
+/* .head-text-dark {
+  color: white!important;
+  transition: color 0.3s;
+} */
+
+/* .white {
   color: white !important;
   transition: color 0.3s;
 }
 
-.head-text-light {
+.black {
   color: black !important;
   transition: color 0.3s;
-}
+} */
 
 /* App general styles */
 .App {

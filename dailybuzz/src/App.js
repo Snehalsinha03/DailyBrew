@@ -18,14 +18,14 @@ const App = () => {
 
   const toggleMode = (checked) => {
     setDarkMode(checked);
-    
+
   };
 
   return (
     <div>
       <Router>
         <Navbar mode={isDarkMode ? 'dark' : 'light'} toggleMode={toggleMode} /> 
-       
+
         <LoadingBar
           height={8}
           color='#f11946'
