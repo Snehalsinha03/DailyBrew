@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 const NavBar = (props) => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/search?q=${searchQuery}`);
+        }
+    };
+
     return (
         <div>
             <nav className={`navbar fixed-top navbar-expand-lg ${props.mode === 'dark' ? 'navbar-dark-mode' : 'navbar-light-mode'}`}>
@@ -25,6 +35,17 @@ const NavBar = (props) => {
                             <li className="nav-item"><Link className={`nav-link ${props.mode === 'dark' ? 'nav-link-dark-mode' : 'nav-link-light-mode'}`} to="/sports">Sports</Link></li>
                             <li className="nav-item"><Link className={`nav-link ${props.mode === 'dark' ? 'nav-link-dark-mode' : 'nav-link-light-mode'}`} to="/technology">Technology</Link></li>
                         </ul>
+                        <form className="d-flex" onSubmit={handleSearch}>
+                            <input
+                                className="form-control me-2"
+                                type="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <button className="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                     </div>
                     <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                         <DarkModeSwitch

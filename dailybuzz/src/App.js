@@ -18,25 +18,15 @@ const App = () => {
 
   const toggleMode = (checked) => {
     setDarkMode(checked);
-
   };
 
   return (
     <div>
       <Router>
         <Navbar mode={isDarkMode ? 'dark' : 'light'} toggleMode={toggleMode} /> 
-
-        <LoadingBar
-          height={8}
-          color='#f11946'
-          progress={progress} 
-        />
+        <LoadingBar height={8} color='#f11946' progress={progress} />
         <div style={{ padding: '10px', display: 'flex', justifyContent: 'flex-end' }}>
-          <DarkModeSwitch
-            checked={isDarkMode}
-            onChange={toggleMode}
-            size={30}
-          />
+          <DarkModeSwitch checked={isDarkMode} onChange={toggleMode} size={30} />
         </div>
         <Routes>
           <Route path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} />
@@ -47,6 +37,7 @@ const App = () => {
           <Route path="/science" element={<News setProgress={setProgress} apiKey={apiKey} key="science" pageSize={pageSize} country="in" category="science" />} />
           <Route path="/sports" element={<News setProgress={setProgress} apiKey={apiKey} key="sports" pageSize={pageSize} country="in" category="sports" />} />
           <Route path="/technology" element={<News setProgress={setProgress} apiKey={apiKey} key="technology" pageSize={pageSize} country="in" category="technology" />} />
+          <Route path="/search" element={<News setProgress={setProgress} apiKey={apiKey} key="search" pageSize={pageSize} country="in" category="search" />} />
         </Routes>
       </Router>
     </div>
