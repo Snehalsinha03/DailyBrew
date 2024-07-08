@@ -47,6 +47,10 @@ body.dark-mode {
   color: white !important;
   transition: color 0.3s;
 }
+.btn-outline-dark {
+  color: white;           /* Text color */
+  border-color: rgb(249, 249, 249);    /* Outline color */
+}
 
 /* Headline text styles */
 /* .head-text-dark {
